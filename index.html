@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .error{
+    display: none;
+   
+   }
+   input[type=text] {
+     border: 1px solid hsl(0, 0%, 75%);
+   }
+   input::placeholder{
+    color:hsl(0, 0%, 75%);
+    font-weight: 600;
+    font-size: 1.2rem;
+   }
+   i {
+  background-color: white;
+  border-radius: 50%;
+  color:hsl(223, 87%, 63%);
+  font-size: 1.0rem;
+  border: 1px solid hsl(0, 0%, 75%);
+  padding: 10px;
+  vertical-align: middle;
+}
+  </style>
+</head>
+<body>
+ <div class="container">
+  <div class="text-center mt-5">
+  <img src="images/logo.svg" class="img-fluid"/>
+</div>
+<h1 class="text-center mt-4" style="font-size: 3rem;font-weight: 300;color: hsl(0, 0%, 59%);">We are launching<span class="ms-2" style="font-size: 3rem;font-weight: 700;color:hsl(209, 33%, 12%);">soon!</span> 
+</h1>
+<p class="text-center mt-2" style="font-size: 1.4rem;font-weight:600;color:hsl(209, 33%, 12%)">  Subscribe and get notified
+</p>
+<form name="form1" action="#" class="d-flex justify-content-center mt-4"> 
+  <input type='text' name='email' class="input" placeholder=" Your email address ...." style="padding-top:0.7vw;padding-bottom: 0.7vw;padding-left: 1vw;padding-right: 10vw;border-radius: 30px;font-size: 1vw; border-color:hsl(0, 0%, 59%);"/></br></br>
+  <!-- <input type="submit" name="submit" value="Submit" /> -->
+  <button class="btn text-white px-5 ms-3"   onclick="validateEmail(document.form1.email)" style="background-color:hsl(223, 87%, 63%);border-radius: 40px;font-weight: 600;" >Notify Me</button>
+  </form>
+  <div class="error ms-3 mt-2">
+    <p  style="font-size:0.8vw;font-weight: 300;font-style:italic;color:hsl(354, 100%, 66%);box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">please provide a valid email address</p>
+</div>
+<div class="text-center mt-5">
+  <img src="images/illustration-dashboard.png" height="400" width="800"/>
+</div>
+<div class="text-center mt-5 mb-3">
+  <i class=" px-3 fa-brands fa-facebook-f"></i>
+  <i class="fa-brands fa-twitter"></i>
+  <i class="fa-brands fa-instagram"></i>
+</div>
+ </div>
+  
+
+  <!-- 
+
+
+  Notify Me
+
+  &copy; Copyright Ping. All rights reserved. -->
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Binish</a>.
+    </p>
+  </footer>
+  <script>
+    function validateEmail(emailId)
+  {
+  var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;  // set pattern
+  if(emailId.value.match(mailformat))  // event match the format 
+  {
+  document.form1.text1.focus();   // If the email address matches the pattern, the function sets the focus on document.form1.text1 (presumably another input field) and returns true, indicating that the email is valid.
+  return true;
+  }
+  else
+  {
+  document.querySelector(".error").style.display = "block"
+  document.querySelector(".input").style.border = "3px solid red"
+  document.form1.text1.focus(); 
+  
+  return false;
+  }
+  }    
+      </script>
+</body>
+</html>
